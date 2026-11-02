@@ -1,79 +1,72 @@
-import type { Metadata } from 'next'
-import { ArrowRight, ArrowUpRight, BarChart3, Target, Zap } from 'lucide-react'
-import { PageFrame, SignalGraphic } from '../site-chrome'
-import { HomeHeader } from '../components/MobileMenu'
+'use client'
 
-export const metadata: Metadata = {
-  title: '1Win | Sports Betting, Casino, and Aviator',
-  description: '1win is your destination for sports betting, casino games, slots, live tables, poker, and Aviator. Register, deposit, and play responsibly.',
-  alternates: { canonical: 'https://1winsearch.com' },
-  openGraph: {
-    title: '1Win | Sports Betting, Casino, and Aviator',
-    description: '1win is your destination for sports betting, casino games, slots, live tables, poker, and Aviator.',
-    type: 'website',
-  },
-}
+import { useState } from 'react'
+import { ArrowRight, ChevronDown, Flame, Menu, ShieldCheck, Smartphone, Trophy, X, Zap } from 'lucide-react'
 
-const features = [
-  { icon: '⚽', title: 'Sportsbook', text: 'Football, tennis, basketball, cricket, esports, and live betting across thousands of markets.' },
-  { icon: '✈️', title: 'Aviator & Crash', text: 'Play 1win Aviator and other crash games with auto cash out and live multipliers.' },
-  { icon: '🎰', title: 'Casino & Slots', text: 'Slots, live blackjack, roulette, baccarat, and poker from leading providers.' },
-  { icon: '🎁', title: 'Bonuses', text: 'Welcome offers, free bets, reload bonuses, and cashback promotions.' },
-  { icon: '💳', title: 'Fast Payments', text: 'Cards, e-wallets, bank transfers, crypto, and mobile money where available.' },
-  { icon: '🛡️', title: 'Responsible Gaming', text: 'Deposit limits, self-exclusion, and reality checks to keep play safe.' },
+const sports = [
+  { label: 'Football', icon: '⚽', count: '1,248 markets' },
+  { label: 'Basketball', icon: '🏀', count: '486 markets' },
+  { label: 'Tennis', icon: '🎾', count: '392 markets' },
+  { label: 'eSports', icon: '◈', count: '208 markets' },
 ]
 
-const popularArticles = [
-  { slug: '1win-complete-guide-aviator-kenya', title: 'Complete guide to 1win Aviator', tag: 'AVIATOR', text: 'Registration, deposits, betting, cash out, and strategy for 1win Aviator.' },
-  { slug: '1win-welcome-bonus-explained', title: '1win welcome bonus explained', tag: 'BONUSES', text: 'How to claim the first deposit bonus and clear wagering requirements.' },
-  { slug: '1win-payment-methods-deposits-withdrawals', title: '1win payment methods', tag: 'PAYMENTS', text: 'Cards, e-wallets, crypto, mobile money—deposits and withdrawals explained.' },
-  { slug: '1win-odds-explained-decimal-fractional', title: '1win odds explained', tag: 'BETTING GUIDE', text: 'Decimal vs fractional odds, implied probability, and calculating returns.' },
-  { slug: '1win-responsible-gambling-guide', title: '1win responsible gambling', tag: 'PLAYER SAFETY', text: 'Deposit limits, self-exclusion, and support resources for safe play.' },
-  { slug: '1win-mobile-app-download', title: '1win mobile app', tag: 'MOBILE', text: 'Download and set up the 1win app on iOS and Android.' },
+const matches = [
+  { league: 'UEFA Champions League', home: 'Real Madrid', away: 'Manchester City', time: '20:00', odds: ['1.82', '3.95', '3.60'], color: 'blue' },
+  { league: 'Premier League', home: 'Arsenal', away: 'Chelsea', time: '17:30', odds: ['1.64', '4.20', '5.10'], color: 'blue' },
+  { league: 'Serie A', home: 'Inter Milan', away: 'AC Milan', time: '19:45', odds: ['2.05', '3.30', '3.25'], color: 'purple' },
 ]
 
 export default function Page() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
-    <main className="site-shell">
-      <HomeHeader />
-      <section className="hero" id="top">
-        <div className="hero-copy">
-          <div className="eyebrow">1WIN</div>
-          <h1>Sports betting,<br /><em>casino & Aviator.</em></h1>
-          <p className="hero-lede">1win is your destination for sports betting, casino games, slots, live tables, poker, and Aviator. Register, deposit, and play responsibly.</p>
-          <div className="hero-actions">
-            <a className="button button-primary" href="/insights/1win-complete-guide-aviator-kenya">Start playing Aviator <ArrowRight size={17} /></a>
-            <a className="text-link" href="/insights/1win-welcome-bonus-explained">See welcome bonus <span>↓</span></a>
+    <main className="min-h-screen overflow-hidden bg-[#070b12] text-white">
+      <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#070b12]/90 backdrop-blur-xl">
+        <div className="mx-auto flex h-[74px] max-w-7xl items-center justify-between px-5 lg:px-8">
+          <a href="#top" className="flex items-center gap-2" aria-label="1win home">
+          <img src="/images/Iwin.svg" width="132" height="40" alt="1win" className="h-10 w-[132px] object-contain" />
+          </a>
+          <div className="hidden items-center gap-8 text-sm font-semibold text-white/65 md:flex">
+            <a className="text-white" href="#sports">Sports</a><a href="#live" className="transition hover:text-white">Live betting</a><a href="#bonus" className="transition hover:text-white">Promotions</a><a href="#why" className="transition hover:text-white">Why 1win</a>
           </div>
-          <div className="proof-row"><div><strong>Sports</strong><span>& casino</span></div><div><strong>Aviator</strong><span>& crash games</span></div><div><strong>Mobile</strong><span>& app</span></div></div>
+          <div className="hidden items-center gap-3 md:flex"><a href="#login" className="rounded-xl px-4 py-2.5 text-sm font-bold text-white/75 hover:text-white">Log in</a><a href="#register" className="registration rounded-xl bg-[#00b956] px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-green-500/20 transition hover:bg-[#08d66a]">Register</a></div>
+          <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Close menu' : 'Open menu'}>{menuOpen ? <X /> : <Menu />}</button>
         </div>
-        <div className="hero-art" aria-label="1win betting illustration" role="img">
-          <div className="art-grid" />
-          <div className="art-label label-top">1WIN SPORTSBOOK</div>
-          <div className="chart-line"><span className="chart-node node-one" /><span className="chart-node node-two" /><span className="chart-node node-three" /><span className="chart-node node-four" /></div>
-          <div className="chart-axis"><span>PRE</span><span>LIVE</span><span>CASINO</span><span>AVIATOR</span><span>SLOTS</span><span>NOW</span></div>
-          <div className="floating-card card-top"><Zap size={15} /><span>Cash out fast</span><strong>Aviator</strong></div>
-          <div className="floating-card card-bottom"><span className="mini-icon"><BarChart3 size={14} /></span><div><small>1win markets</small><strong>Sports <b>+ Casino</b></strong></div></div>
+        {menuOpen && <div className="border-t border-white/10 bg-[#0b1018] px-5 py-5 md:hidden"><div className="flex flex-col gap-5 text-sm font-semibold"><a href="#sports" onClick={() => setMenuOpen(false)}>Sports</a><a href="#live" onClick={() => setMenuOpen(false)}>Live betting</a><a href="#bonus" onClick={() => setMenuOpen(false)}>Promotions</a><a href="#register" className="registration rounded-xl bg-[#00b956] px-4 py-3 text-center text-white">Register</a></div></div>}
+      </nav>
+
+      <section id="top" className="relative isolate mx-auto max-w-7xl px-5 pb-20 pt-36 lg:px-8 lg:pb-28 lg:pt-48">
+        <div className="pointer-events-none absolute -right-40 -top-20 -z-10 size-[520px] rounded-full bg-blue-500/15 blur-[100px]" />
+        <div className="pointer-events-none absolute -left-60 top-52 -z-10 size-[440px] rounded-full bg-blue-600/10 blur-[110px]" />
+        <div className="grid items-center gap-14 lg:grid-cols-[1.04fr_.96fr] lg:gap-12">
+          <div>
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-400/25 bg-blue-400/10 px-3.5 py-2 text-xs font-bold uppercase tracking-[.16em] text-blue-300"><Flame size={14} fill="currentColor" /> The thrill starts here</div>
+            <h1 className="max-w-3xl text-5xl font-black leading-[.98] tracking-[-.065em] sm:text-7xl lg:text-[82px]">Bet smarter.<br /><span className="text-[#0d7cff]">Win bigger.</span></h1>
+            <p className="mt-7 max-w-xl text-lg leading-8 text-white/55">Your new home for live sports, sharp odds and instant action. Join millions of fans making every match matter.</p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row"><a href="#register" className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0d7cff] px-7 py-4 font-bold shadow-[0_15px_40px_rgba(255,91,34,.24)] transition hover:-translate-y-0.5 hover:bg-[#ff713d]">Create free account <ArrowRight size={18} className="transition group-hover:translate-x-1" /></a><a href="#sports" className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/15 px-7 py-4 font-bold text-white/80 transition hover:border-white/30 hover:text-white">Explore sports <ChevronDown size={18} /></a></div>
+            <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-xs font-semibold text-white/45"><span className="flex items-center gap-2"><ShieldCheck size={16} className="text-emerald-400" /> Secure & trusted</span><span className="flex items-center gap-2"><Zap size={16} className="text-yellow-400" /> Instant payouts</span><span className="flex items-center gap-2"><Smartphone size={16} className="text-blue-400" /> Mobile ready</span></div>
+          </div>
+          <div className="relative mx-auto w-full max-w-[560px]">
+            <div className="absolute inset-8 rounded-[40px] bg-blue-500/20 blur-3xl" />
+            <div className="relative overflow-hidden rounded-[30px] border border-white/15 bg-[#111923] p-4 shadow-2xl shadow-black/40 sm:p-5">
+              <div className="mb-4 flex items-center justify-between"><div><p className="text-xs font-bold uppercase tracking-widest text-white/40">Live now</p><p className="mt-1 font-bold">Top events today</p></div><span className="flex items-center gap-1.5 rounded-full bg-red-500/15 px-2.5 py-1 text-[10px] font-bold uppercase text-red-400"><i className="size-1.5 rounded-full bg-red-400" /> 24 live</span></div>
+              <div className="mb-4 rounded-2xl bg-gradient-to-br from-[#253752] to-[#121923] p-5"><div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-white/45"><span>Champions League</span><span className="text-red-300">Live 2nd half</span></div><div className="mt-5 flex items-center justify-between"><div className="text-center"><div className="mx-auto mb-2 grid size-12 place-items-center rounded-2xl bg-white/10 text-2xl">⚪</div><p className="text-xs font-semibold">Real Madrid</p></div><div className="text-center"><p className="text-3xl font-black">2 : 1</p><p className="mt-1 text-[10px] text-white/40">68:24</p></div><div className="text-center"><div className="mx-auto mb-2 grid size-12 place-items-center rounded-2xl bg-white/10 text-2xl">🔵</div><p className="text-xs font-semibold">Man City</p></div></div></div>
+              <div className="space-y-2">{matches.map((match) => <div key={match.home} className="rounded-xl border border-white/7 bg-white/[.035] p-3"><div className="flex items-center justify-between text-[10px] text-white/35"><span>{match.league}</span><span>{match.time}</span></div><div className="mt-2 flex items-center justify-between gap-2 text-xs font-semibold"><span>{match.home} <span className="text-white/35">vs</span> {match.away}</span><div className="flex gap-1.5">{match.odds.map((odd, i) => <span key={odd} className="rounded-md bg-white/10 px-2 py-1 font-bold text-blue-300">{['1', 'X', '2'][i]} {odd}</span>)}</div></div></div>)}</div>
+              <button className="mt-4 w-full rounded-xl bg-white/10 py-3 text-xs font-bold text-white/75 transition hover:bg-white/15">View all live events <ArrowRight className="ml-1 inline" size={14} /></button>
+            </div>
+          </div>
         </div>
       </section>
 
-      <div className="ticker" aria-label="Features"><div><span>SPORTSBOOK</span><span>•</span><span>CASINO</span><span>•</span><span>AVIATOR</span><span>•</span><span>SLOTS</span><span>•</span><span>POKER</span><span>•</span><span>BONUSES</span></div></div>
+      <section id="sports" className="border-y border-white/8 bg-[#0b1119] py-16"><div className="mx-auto max-w-7xl px-5 lg:px-8"><div className="mb-8 flex items-end justify-between"><div><p className="text-sm font-bold uppercase tracking-[.18em] text-blue-400">Pick your game</p><h2 className="mt-2 text-3xl font-black tracking-tight sm:text-4xl">Every sport. One place.</h2></div><a href="#register" className="hidden items-center gap-2 text-sm font-bold text-blue-300 sm:flex">View all sports <ArrowRight size={16} /></a></div><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{sports.map((sport, index) => <a href="#register" key={sport.label} className="group rounded-2xl border border-white/8 bg-white/[.03] p-5 transition hover:-translate-y-1 hover:border-blue-400/40 hover:bg-blue-400/8"><div className="mb-7 flex items-start justify-between"><span className="text-3xl">{sport.icon}</span><span className="rounded-full bg-white/8 px-2 py-1 text-[10px] font-bold text-white/40">0{index + 1}</span></div><h3 className="font-bold">{sport.label}</h3><p className="mt-1 text-xs text-white/40">{sport.count}</p></a>)}</div></div></section>
 
-      <section className="section features-section" id="features">
-        <div className="section-intro"><div><div className="eyebrow">What 1win offers</div><h2>Everything in<br /><em>one place.</em></h2></div><p>From pre-match sports and live betting to Aviator crash games, slots, and live casino tables—1win brings it all into a single account.</p></div>
-        <div className="feature-grid">{features.map((feature) => <article className="feature-card" key={feature.title}><span className="svg-emoji">{feature.icon}</span><h3>{feature.title}</h3><p>{feature.text}</p></article>)}</div>
-      </section>
+      <section id="bonus" className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28"><div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#0d7cff] via-[#db3d1e] to-[#7d211a] px-7 py-12 sm:px-14 lg:flex lg:items-center lg:justify-between lg:px-20"><div className="pointer-events-none absolute -right-20 -top-40 size-[420px] rounded-full border-[70px] border-white/10" /><div className="relative"><p className="text-sm font-bold uppercase tracking-[.2em] text-blue-100/70">Welcome to the winning side</p><h2 className="mt-3 max-w-xl text-4xl font-black leading-tight tracking-[-.04em] sm:text-5xl">Get up to <span className="text-yellow-300">100% bonus</span> on your first deposit.</h2><p className="mt-4 max-w-lg text-blue-50/75">More balance means more ways to play. Claim your welcome bonus and start your journey with 1win.</p></div><a href="#register" className="relative mt-8 inline-flex shrink-0 items-center gap-3 rounded-2xl bg-white px-6 py-4 font-bold text-[#d63e20] transition hover:bg-blue-50 lg:mt-0">Claim bonus <ArrowRight size={18} /></a></div></section>
 
-      <section className="section popular-section" id="popular">
-        <div className="section-intro"><div><div className="eyebrow">Popular guides</div><h2>Helpful reads for<br /><em>1win players.</em></h2></div><a className="text-link" href="/insights">View all articles <ArrowRight size={16} /></a></div>
-        <div className="insight-grid">{popularArticles.map((article) => { const Icon = Target; return <article className="article-card" key={article.slug}><div className="article-art"><Icon size={28} /></div><div className="insight-meta">{article.tag}</div><h3>{article.title}</h3><p>{article.text}</p><a href={`/insights/${article.slug}`}>Read article <ArrowRight size={15} /></a></article> })}</div>
-      </section>
+      <section id="why" className="border-t border-white/8 bg-[#0b1119] py-20"><div className="mx-auto max-w-7xl px-5 lg:px-8"><div className="grid gap-12 lg:grid-cols-[.75fr_1.25fr] lg:items-end"><div><p className="text-sm font-bold uppercase tracking-[.18em] text-blue-400">Made for fans</p><h2 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">The game is better with 1win.</h2></div><p className="max-w-xl text-lg leading-8 text-white/50">From pre-match picks to last-minute live action, everything you need is fast, fair and right at your fingertips.</p></div><div className="mt-12 grid gap-4 sm:grid-cols-3"><div className="rounded-2xl border border-white/8 bg-white/[.03] p-6"><Trophy className="text-blue-400" /><h3 className="mt-8 font-bold">Competitive odds</h3><p className="mt-2 text-sm leading-6 text-white/45">Markets built to give you more value on every bet.</p></div><div className="rounded-2xl border border-white/8 bg-white/[.03] p-6"><Zap className="text-yellow-400" /><h3 className="mt-8 font-bold">Fast withdrawals</h3><p className="mt-2 text-sm leading-6 text-white/45">Simple, secure payments with speedy payouts.</p></div><div className="rounded-2xl border border-white/8 bg-white/[.03] p-6"><ShieldCheck className="text-emerald-400" /><h3 className="mt-8 font-bold">Play with confidence</h3><p className="mt-2 text-sm leading-6 text-white/45">Your safety and privacy always come first.</p></div></div></div></section>
 
-      <section className="section faq-section"><div className="faq-heading"><div className="eyebrow">Good to know</div><h2>Questions,<br /><em>answered.</em></h2></div><div className="faq-preview"><p>Quick answers about 1win products, payments, bonuses, and responsible gaming. See the full list.</p><a className="text-link" href="/faq">View all FAQs <ArrowRight size={16} /></a></div></section>
+      <section id="register" className="relative overflow-hidden px-5 py-24 text-center lg:py-32"><div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 blur-[120px]" /><p className="text-sm font-bold uppercase tracking-[.2em] text-blue-400">Your next win starts now</p><h2 className="mx-auto mt-4 max-w-2xl text-4xl font-black tracking-[-.05em] sm:text-6xl">Ready to make it count?</h2><p className="mx-auto mt-5 max-w-md text-white/50">Join 1win today and experience betting without limits.</p><a href="#top" className="mt-8 inline-flex items-center gap-3 rounded-2xl bg-[#0d7cff] px-8 py-4 font-bold shadow-lg shadow-blue-500/20 transition hover:bg-[#ff713d]">Register now <ArrowRight size={18} /></a></section>
 
-      <section className="contact-section" id="contact"><div className="contact-orbit orbit-one" /><div className="contact-orbit orbit-two" /><div className="eyebrow">Need help?</div><h2>Ready to play<br /><em>responsibly?</em></h2><p>Set your limits, read the terms, and keep play fun. Gambling involves risk.</p><a className="button button-light" href="/faq">Visit the help center <ArrowRight size={17} /></a></section>
-
-      <footer className="site-footer"><div className="footer-top"><a className="brand" href="#top"><span className="brand-mark"><span /></span><span>1WIN</span></a><p>1win betting, casino, and Aviator. Play responsibly.</p><div className="footer-cta"><span>1WIN REG: 147039</span><a href="mailto:support@1win.com">support@1win.com <ArrowUpRight size={15} /></a></div></div><div className="footer-bottom"><span>© 2026 1Win. All rights reserved.</span><div><a href="/services">Sportsbook</a><a href="/approach">Casino</a><a href="/results">Aviator</a><a href="/insights">Guides</a><a href="/faq">FAQ</a><a href="https://pakakumi.com/register">Register</a><a href="https://pakakumi.com/login">Login</a></div><span className="footer-note">Gambling can be addictive. Play responsibly.</span></div></footer>
+      <footer className="border-t border-white/8 px-5 py-8 text-xs text-white/35"><div className="mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"><div className="flex items-center gap-2 text-base font-black text-white"><span className="grid size-6 place-items-center rounded-md bg-[#0d7cff] text-xs italic">1</span>win<span className="text-[#0d7cff]">.</span></div><p>© 2026 1win. Play responsibly. 18+</p><div className="flex gap-5"><a href="#top" className="hover:text-white">Terms</a><a href="#top" className="hover:text-white">Privacy</a><a href="#top" className="hover:text-white">Responsible gaming</a></div></div></footer>
     </main>
   )
 }
