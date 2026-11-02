@@ -46,10 +46,6 @@ export default function Page() {
             <a className="text-white" href="https://pakakumi.com/sports">Sports</a>
             <a className="text-white" href="https://pakakumi.com">Casino</a>
             <a className="text-white" href="https://pakakumi.com/aviator">Aviator</a>
-            <a className="text-white" href="https://pakakumi.com/promotions">Promotions</a>
-            <a className="text-white" href="https://pakakumi.com/crash">Crash</a>
-            <a className="text-white" href="https://pakakumi.com/referral">Referral</a>
-            <a className="text-white" href="https://pakakumi.com/leaderboard">Leaderboard</a>
           </div>
           <div className="hidden items-center gap-3 md:flex">
             <a href="https://pakakumi.com/login" className="rounded-xl px-4 py-2.5 text-sm font-bold text-white/75 hover:text-white">Log in</a>
@@ -63,10 +59,6 @@ export default function Page() {
               <a href="https://pakakumi.com/sports" onClick={() => setMenuOpen(false)}>Sports</a>
               <a href="https://pakakumi.com" onClick={() => setMenuOpen(false)}>Casino</a>
               <a href="https://pakakumi.com/aviator" onClick={() => setMenuOpen(false)}>Aviator</a>
-              <a href="https://pakakumi.com/promotions" onClick={() => setMenuOpen(false)}>Promotions</a>
-              <a href="https://pakakumi.com/crash" onClick={() => setMenuOpen(false)}>Crash</a>
-              <a href="https://pakakumi.com/referral" onClick={() => setMenuOpen(false)}>Referral</a>
-              <a href="https://pakakumi.com/leaderboard" onClick={() => setMenuOpen(false)}>Leaderboard</a>
               <a href="https://pakakumi.com/register" className="registration rounded-xl bg-[#00b956] px-4 py-3 text-center text-white">Register</a>
             </div>
           </div>
