@@ -454,7 +454,7 @@ export default function Page() {
       <footer className="border-t border-white/8 px-5 py-8 text-xs text-white/35">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-2 text-base font-black text-white">
-            <span className="grid size-6 place-items-center rounded-md bg-[#0d7cff] text-xs italic">1</span>win<span className="text-[#0d7cff]">.</span>
+            <img src="/images/Iwin.svg" width="80" height="24" alt="1win" className="h-8 w-[80px] object-contain" />
           </div>
           <p>© 2026 1win. Play responsibly. 18+</p>
           <div className="flex gap-5">
