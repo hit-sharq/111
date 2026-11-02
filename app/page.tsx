@@ -84,38 +84,44 @@ export default function Page() {
           <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Close menu' : 'Open menu'}>{menuOpen ? <X /> : <Menu />}</button>
         </div>
         {menuOpen && (
-          <div className="border-t border-white/10 bg-[#0b1018] px-5 py-5 md:hidden">
+          <>
+            <div
+              className="fixed inset-0 z-40 bg-black/50 md:hidden"
+              onClick={() => setMenuOpen(false)}
+            />
+            <div className="absolute inset-x-0 top-[74px] z-50 border-t border-white/10 bg-[#0b1018] px-5 py-5 md:hidden shadow-2xl">
             <div className="flex flex-col gap-5 text-sm font-semibold">
               <a
                 href="#"
-                onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com/sports'; }}
+                onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.location.href = 'https://pakakumi.com/sports'; }}
                 className="text-white cursor-pointer hover:text-white"
               >
                 Sports
               </a>
               <a
                 href="#"
-                onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com'; }}
+                onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.location.href = 'https://pakakumi.com'; }}
                 className="text-white cursor-pointer hover:text-white"
               >
                 Casino
               </a>
               <a
                 href="#"
-                onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com/aviator'; }}
+                onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.location.href = 'https://pakakumi.com/aviator'; }}
                 className="text-white cursor-pointer hover:text-white"
               >
                 Aviator
               </a>
               <a
                 href="#"
-                onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com/register'; }}
+                onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.location.href = 'https://pakakumi.com/register'; }}
                 className="registration rounded-xl bg-[#00b956] px-4 py-3 text-center text-white cursor-pointer"
               >
                 Register
               </a>
-            </div>
+                        </div>
           </div>
+          </>
         )}
       </nav>
 
