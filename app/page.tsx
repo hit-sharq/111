@@ -43,13 +43,9 @@ export default function Page() {
             <span className="ml-2 text-xs font-bold tracking-tight text-white/80">1WIN REG: 147039</span>
           </a>
           <div className="hidden items-center gap-8 text-sm font-semibold text-white/65 md:flex">
-            <a className="text-white" href="#about">About</a>
             <a className="text-white" href="#sports">Sports</a>
             <a className="text-white" href="#casino">Casino</a>
             <a className="text-white" href="#aviator">Aviator</a>
-            <a className="text-white" href="#bonus">Bonuses</a>
-            <a className="text-white" href="#payments">Payments</a>
-            <a className="text-white" href="#faq">FAQ</a>
           </div>
           <div className="hidden items-center gap-3 md:flex">
             <a href="#login" className="rounded-xl px-4 py-2.5 text-sm font-bold text-white/75 hover:text-white">Log in</a>
@@ -60,13 +56,9 @@ export default function Page() {
         {menuOpen && (
           <div className="border-t border-white/10 bg-[#0b1018] px-5 py-5 md:hidden">
             <div className="flex flex-col gap-5 text-sm font-semibold">
-              <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
               <a href="#sports" onClick={() => setMenuOpen(false)}>Sports</a>
               <a href="#casino" onClick={() => setMenuOpen(false)}>Casino</a>
               <a href="#aviator" onClick={() => setMenuOpen(false)}>Aviator</a>
-              <a href="#bonus" onClick={() => setMenuOpen(false)}>Bonuses</a>
-              <a href="#payments" onClick={() => setMenuOpen(false)}>Payments</a>
-              <a href="#faq" onClick={() => setMenuOpen(false)}>FAQ</a>
               <a href="#register" className="registration rounded-xl bg-[#00b956] px-4 py-3 text-center text-white">Register</a>
             </div>
           </div>
