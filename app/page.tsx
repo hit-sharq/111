@@ -43,23 +43,77 @@ export default function Page() {
             <span className="ml-2 text-xs font-bold tracking-tight text-white/80">1WIN REG: 147039</span>
           </a>
           <div className="hidden items-center gap-8 text-sm font-semibold text-white/65 md:flex">
-            <a className="text-white" href="https://pakakumi.com/sports">Sports</a>
-            <a className="text-white" href="https://pakakumi.com">Casino</a>
-            <a className="text-white" href="https://pakakumi.com/aviator">Aviator</a>
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com/sports'; }}
+              className="text-white cursor-pointer hover:text-white"
+            >
+              Sports
+            </a>
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com'; }}
+              className="text-white cursor-pointer hover:text-white"
+            >
+              Casino
+            </a>
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com/aviator'; }}
+              className="text-white cursor-pointer hover:text-white"
+            >
+              Aviator
+            </a>
           </div>
           <div className="hidden items-center gap-3 md:flex">
-            <a href="https://pakakumi.com/login" className="rounded-xl px-4 py-2.5 text-sm font-bold text-white/75 hover:text-white">Log in</a>
-            <a href="https://pakakumi.com/register" className="registration rounded-xl bg-[#00b956] px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-green-500/20 transition hover:bg-[#08d66a]">Register</a>
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com/login'; }}
+              className="rounded-xl px-4 py-2.5 text-sm font-bold text-white/75 cursor-pointer hover:text-white"
+            >
+              Log in
+            </a>
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com/register'; }}
+              className="registration rounded-xl bg-[#00b956] px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-green-500/20 transition hover:bg-[#08d66a] cursor-pointer"
+            >
+              Register
+            </a>
           </div>
           <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Close menu' : 'Open menu'}>{menuOpen ? <X /> : <Menu />}</button>
         </div>
         {menuOpen && (
           <div className="border-t border-white/10 bg-[#0b1018] px-5 py-5 md:hidden">
             <div className="flex flex-col gap-5 text-sm font-semibold">
-              <a href="https://pakakumi.com/sports" onClick={() => setMenuOpen(false)}>Sports</a>
-              <a href="https://pakakumi.com" onClick={() => setMenuOpen(false)}>Casino</a>
-              <a href="https://pakakumi.com/aviator" onClick={() => setMenuOpen(false)}>Aviator</a>
-              <a href="https://pakakumi.com/register" className="registration rounded-xl bg-[#00b956] px-4 py-3 text-center text-white">Register</a>
+              <a
+                href="#"
+                onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com/sports'; }}
+                className="text-white cursor-pointer hover:text-white"
+              >
+                Sports
+              </a>
+              <a
+                href="#"
+                onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com'; }}
+                className="text-white cursor-pointer hover:text-white"
+              >
+                Casino
+              </a>
+              <a
+                href="#"
+                onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com/aviator'; }}
+                className="text-white cursor-pointer hover:text-white"
+              >
+                Aviator
+              </a>
+              <a
+                href="#"
+                onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com/register'; }}
+                className="registration rounded-xl bg-[#00b956] px-4 py-3 text-center text-white cursor-pointer"
+              >
+                Register
+              </a>
             </div>
           </div>
         )}
@@ -387,9 +441,13 @@ export default function Page() {
         <p className="mx-auto mt-5 max-w-md text-white/50">
           Join 1win today and experience betting without limits.
         </p>
-        <a href="https://pakakumi.com/register" className="mt-8 inline-flex items-center gap-3 rounded-2xl bg-[#0d7cff] px-8 py-4 font-bold shadow-lg shadow-blue-500/20 transition hover:bg-[#ff713d]">
-          Register now <ArrowRight size={18} />
-        </a>
+        <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com/register'; }}
+              className="mt-8 inline-flex items-center gap-3 rounded-2xl bg-[#0d7cff] px-8 py-4 font-bold shadow-lg shadow-blue-500/20 transition hover:bg-[#ff713d] cursor-pointer"
+            >
+              Register now <ArrowRight size={18} />
+            </a>
       </section>
 
       {/* Footer */}
@@ -400,9 +458,27 @@ export default function Page() {
           </div>
           <p>© 2026 1win. Play responsibly. 18+</p>
           <div className="flex gap-5">
-            <a href="https://pakakumi.com/terms-of-service" className="hover:text-white">Terms</a>
-            <a href="https://pakakumi.com/privacy-policy" className="hover:text-white">Privacy</a>
-            <a href="https://pakakumi.com/responsible-gambling" className="hover:text-white">Responsible gaming</a>
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com/terms-of-service'; }}
+              className="text-white cursor-pointer hover:text-white"
+            >
+              Terms
+            </a>
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com/privacy-policy'; }}
+              className="text-white cursor-pointer hover:text-white"
+            >
+              Privacy
+            </a>
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com/responsible-gambling'; }}
+              className="text-white cursor-pointer hover:text-white"
+            >
+              Responsible gaming
+            </a>
           </div>
         </div>
       </footer>
