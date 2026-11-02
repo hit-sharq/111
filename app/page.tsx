@@ -25,7 +25,8 @@ export default function Page() {
         <div className="mx-auto flex h-[74px] max-w-7xl items-center justify-between px-5 lg:px-8">
           <a href="#top" className="flex items-center gap-2" aria-label="1win home">
           <img src="/images/Iwin.svg" width="132" height="40" alt="1win" className="h-10 w-[132px] object-contain" />
-          </a>
+          <span className="ml-2 text-xs font-bold tracking-tight text-white/80">1WIN REG: 147039</span>
+        </a>
           <div className="hidden items-center gap-8 text-sm font-semibold text-white/65 md:flex">
             <a className="text-white" href="#sports">Sports</a><a href="#live" className="transition hover:text-white">Live betting</a><a href="#bonus" className="transition hover:text-white">Promotions</a><a href="#why" className="transition hover:text-white">Why 1win</a>
           </div>
