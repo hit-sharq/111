@@ -39,7 +39,7 @@ export default function Page() {
       <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#070b12]/90 backdrop-blur-xl">
         <div className="mx-auto flex h-[74px] max-w-7xl items-center justify-between px-5 lg:px-8">
           <a href="#top" className="flex items-center gap-2" aria-label="1win home">
-            <img src="/images/Iwin.svg" width="132" height="40" alt="1win" className="h-10 w-[132px] object-contain" />
+            <img src="/images/pqY9O.jpg" width="132" height="40" alt="1win" className="h-10 w-[132px] object-contain" />
             <span className="ml-2 text-xs font-bold tracking-tight text-white/80">1WIN REG: 147039</span>
           </a>
           <div className="hidden items-center gap-8 text-sm font-semibold text-white/65 md:flex">
@@ -454,7 +454,7 @@ export default function Page() {
       <footer className="border-t border-white/8 px-5 py-8 text-xs text-white/35">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-2 text-base font-black text-white">
-            <img src="/images/Iwin.svg" width="80" height="24" alt="1win" className="h-8 w-[80px] object-contain" />
+            <img src="/images/pqY9O.jpg" width="80" height="24" alt="1win" className="h-8 w-[80px] object-contain" />
           </div>
           <p>© 2026 1win. Play responsibly. 18+</p>
           <div className="flex gap-5">

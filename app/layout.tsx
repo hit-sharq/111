@@ -15,10 +15,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/images/1win.jpeg',
+        url: '/images/logo.png',
       },
     ],
-    apple: '/images/1win.jpeg',
+    apple: '/images/logo.png',
   },
 }
 
