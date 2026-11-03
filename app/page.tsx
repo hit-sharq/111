@@ -84,48 +84,46 @@ export default function Page() {
           <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Close menu' : 'Open menu'}>{menuOpen ? <X /> : <Menu />}</button>
         </div>
         {menuOpen && (
-          <>
+          <div className="fixed inset-0 z-40 md:hidden" onClick={() => setMenuOpen(false)}>
             <div
-              className="fixed inset-0 z-40 bg-black/50 md:hidden"
-              onClick={() => setMenuOpen(false)}
-            />
-            <div className="absolute inset-x-0 top-[74px] z-50 border-t border-white/10 bg-[#0b1018] px-5 py-5 md:hidden shadow-2xl">
-            <div className="flex flex-col gap-5 text-sm font-semibold">
-              <a
-                href="#"
-                onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.location.href = 'https://pakakumi.com/sports'; }}
-                className="text-white cursor-pointer hover:text-white"
-              >
-                Sports
-              </a>
-              <a
-                href="#"
-                onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.location.href = 'https://pakakumi.com'; }}
-                className="text-white cursor-pointer hover:text-white"
-              >
-                Casino
-              </a>
-              <a
-                href="#"
-                onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.location.href = 'https://pakakumi.com/aviator'; }}
-                className="text-white cursor-pointer hover:text-white"
-              >
-                Aviator
-              </a>
-              <a
-                href="#"
-                onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.location.href = 'https://pakakumi.com/register'; }}
-                className="registration rounded-xl bg-[#00b956] px-4 py-3 text-center text-white cursor-pointer"
-              >
-                Register
-              </a>
-                        </div>
+              className="absolute inset-x-0 top-[74px] z-50 border-t border-white/10 bg-[#0b1018] px-5 py-5 shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex flex-col gap-5 text-sm font-semibold">
+                <a
+                  href="#"
+                  onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.location.href = 'https://pakakumi.com/sports'; }}
+                  className="text-white cursor-pointer hover:text-white"
+                >
+                  Sports
+                </a>
+                <a
+                  href="#"
+                  onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.location.href = 'https://pakakumi.com'; }}
+                  className="text-white cursor-pointer hover:text-white"
+                >
+                  Casino
+                </a>
+                <a
+                  href="#"
+                  onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.location.href = 'https://pakakumi.com/aviator'; }}
+                  className="text-white cursor-pointer hover:text-white"
+                >
+                  Aviator
+                </a>
+                <a
+                  href="#"
+                  onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.location.href = 'https://pakakumi.com/register'; }}
+                  className="registration rounded-xl bg-[#00b956] px-4 py-3 text-center text-white cursor-pointer"
+                >
+                  Register
+                </a>
+              </div>
+            </div>
           </div>
-          </>
         )}
       </nav>
 
-      {/* Hero */}
       <section id="top" className="relative isolate mx-auto max-w-7xl px-5 pb-20 pt-36 lg:px-8 lg:pb-28 lg:pt-48">
         <div className="pointer-events-none absolute -right-40 -top-20 -z-10 size-[520px] rounded-full bg-blue-500/15 blur-[100px]" />
         <div className="pointer-events-none absolute -left-60 top-52 -z-10 size-[440px] rounded-full bg-blue-600/10 blur-[110px]" />
