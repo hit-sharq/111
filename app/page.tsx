@@ -18,6 +18,12 @@ const matches = [
   { league: 'Serie A', home: 'Inter Milan', away: 'AC Milan', time: '19:45', odds: ['2.05', '3.30', '3.25'] },
 ]
 
+const navigationLinks = [
+  { label: 'Sports', href: 'https://pakakumi.com/sports' },
+  { label: 'Casino', href: 'https://pakakumi.com' },
+  { label: 'Aviator', href: 'https://pakakumi.com/aviator' },
+]
+
 const faqs = [
   { q: 'What is 1win?', a: '1win is an online betting and casino platform offering sports betting, crash games (Aviator), slots, live casino, and poker. It operates under Curacao license OGL/2024/587/0621.' },
   { q: 'Is 1win legit in Kenya?', a: 'Yes, 1win operates under Curacao Gaming Authority license OGL/2024/587/0621 and accepts players from Kenya.' },
@@ -43,27 +49,11 @@ export default function Page() {
             <span className="ml-2 text-xs font-bold tracking-tight text-white/80">1WIN REG: 147039</span>
           </a>
           <div className="hidden items-center gap-8 text-sm font-semibold text-white/65 md:flex">
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com/sports'; }}
-              className="text-white cursor-pointer hover:text-white"
-            >
-              Sports
-            </a>
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com'; }}
-              className="text-white cursor-pointer hover:text-white"
-            >
-              Casino
-            </a>
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); window.location.href = 'https://pakakumi.com/aviator'; }}
-              className="text-white cursor-pointer hover:text-white"
-            >
-              Aviator
-            </a>
+            {navigationLinks.map((link) => (
+              <a key={link.label} href={link.href} className="text-white cursor-pointer hover:text-white">
+                {link.label}
+              </a>
+            ))}
           </div>
           <div className="hidden items-center gap-3 md:flex">
             <a
@@ -81,44 +71,53 @@ export default function Page() {
               Register
             </a>
           </div>
-          <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Close menu' : 'Open menu'}>{menuOpen ? <X /> : <Menu />}</button>
+          <button
+            type="button"
+            className="md:hidden"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+          >
+            {menuOpen ? <X /> : <Menu />}
+          </button>
         </div>
         {menuOpen && (
-          <div className="fixed inset-0 z-40 md:hidden" onClick={() => setMenuOpen(false)}>
+          <div
+            className="mobile-menu-backdrop z-40 md:hidden"
+            onClick={() => setMenuOpen(false)}
+          >
             <div
-              className="absolute inset-x-0 top-[74px] z-50 border-t border-white/10 bg-[#0b1018] px-5 py-5 shadow-2xl"
+              id="mobile-navigation"
+              className="mobile-menu-panel border-t border-white/10 bg-[#0b1018] px-5 py-5 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex flex-col gap-5 text-sm font-semibold">
+              <nav aria-label="Mobile navigation" className="flex flex-col gap-5 text-sm font-semibold">
+                {navigationLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="mobile-menu-link text-white"
+                  >
+                    {link.label}
+                  </a>
+                ))}
                 <a
-                  href="#"
-                  onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.location.href = 'https://pakakumi.com/sports'; }}
-                  className="text-white cursor-pointer hover:text-white"
+                  href="https://pakakumi.com/login"
+                  onClick={() => setMenuOpen(false)}
+                  className="mobile-menu-link text-white"
                 >
-                  Sports
+                  Log in
                 </a>
                 <a
-                  href="#"
-                  onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.location.href = 'https://pakakumi.com'; }}
-                  className="text-white cursor-pointer hover:text-white"
-                >
-                  Casino
-                </a>
-                <a
-                  href="#"
-                  onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.location.href = 'https://pakakumi.com/aviator'; }}
-                  className="text-white cursor-pointer hover:text-white"
-                >
-                  Aviator
-                </a>
-                <a
-                  href="#"
-                  onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.location.href = 'https://pakakumi.com/register'; }}
-                  className="registration rounded-xl bg-[#00b956] px-4 py-3 text-center text-white cursor-pointer"
+                  href="https://pakakumi.com/register"
+                  onClick={() => setMenuOpen(false)}
+                  className="registration mobile-menu-register rounded-xl bg-[#00b956] px-4 py-3 text-center text-white cursor-pointer"
                 >
                   Register
                 </a>
-              </div>
+              </nav>
             </div>
           </div>
         )}
