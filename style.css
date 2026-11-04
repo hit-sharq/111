@@ -1558,3 +1558,18 @@ button, a {
     height: 36px;
   }
 }
+
+/* Match card image */
+.match-card {
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.match-card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  object-fit: cover;
+}
