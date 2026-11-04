@@ -1142,13 +1142,44 @@ button, a {
 
 /* Bonus screenshot */
 .bonus-screenshot {
-  margin: 24px 0;
+  margin: 32px 0;
   text-align: center;
+  position: relative;
 }
 
 .bonus-img {
   max-width: 100%;
   height: auto;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bonus-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+  .bonus-img {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+  
+  .bonus-screenshot {
+    margin: 20px 0;
+  }
+  
+  .bonus-card {
+    padding: 32px 20px;
+  }
+  
+  .bonus-title {
+    font-size: 32px;
+  }
+  
+  .bonus-desc {
+    font-size: 14px;
+  }
 }
