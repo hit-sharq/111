@@ -209,16 +209,50 @@ button, a {
   text-align: center;
 }
 
+.mobile-login {
+  color: #a5a5a5;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-weight: 600;
+  display: block;
+}
+
+.mobile-login:hover {
+  color: #ffffff;
+}
+
 /* Hero Section */
 .hero {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 460px;
-  gap: 60px;
+  display: block;
   max-width: 1240px;
   margin: 0 auto;
   padding: 140px 20px 100px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 460px;
+  gap: 60px;
   align-items: center;
+}
+
+.hero-image {
+  text-align: center;
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
 .hero-bg-blur {
@@ -1010,7 +1044,7 @@ button, a {
     display: flex;
   }
 
-  .nav-actions .btn {
+  .nav-actions {
     display: none;
   }
 
@@ -1022,6 +1056,11 @@ button, a {
     display: block;
     padding: 100px 20px 60px;
     min-height: auto;
+  }
+  
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .hero-title {
@@ -1572,4 +1611,332 @@ button, a {
   display: block;
   border-radius: 16px;
   object-fit: cover;
+}
+
+/* Hero image */
+.hero-image {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .hero-img {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Login screenshot */
+.login-screenshot {
+  margin: 0 0 32px 0;
+  text-align: center;
+}
+
+.login-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+  .login-img {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Bonus detail grid */
+.bonus-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.bonus-detail-text p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 16px;
+}
+
+/* Aviator content */
+.aviator-content {
+  max-width: 100%;
+}
+
+.aviator-subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 40px 0 20px 0;
+}
+
+.aviator-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.aviator-step {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 28px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.aviator-step:hover {
+  transform: translateY(-4px);
+  border-color: rgba(13, 124, 255, 0.4);
+  background: rgba(13, 124, 255, 0.08);
+}
+
+.aviator-step-number {
+  width: 48px;
+  height: 48px;
+  background: #0d7cff;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 900;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.aviator-step-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.aviator-step-desc {
+  font-size: 13px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.aviator-tips {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.aviator-tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.aviator-tips-list li {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.aviator-tips-list li:last-child {
+  border-bottom: none;
+}
+
+.aviator-tips-list li strong {
+  color: #ffffff;
+}
+
+/* Sports content */
+.sports-content {
+  max-width: 100%;
+}
+
+/* Payments content */
+.payments-content {
+  max-width: 100%;
+}
+
+.payments-subtitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 24px 0 12px 0;
+}
+
+.deposit-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 20px 0 24px 0;
+}
+
+.deposit-step {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.deposit-step-number {
+  width: 36px;
+  height: 36px;
+  background: #0d7cff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 900;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.deposit-step-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* Mobile content */
+.mobile-content {
+  max-width: 100%;
+}
+
+/* Affiliate content */
+.affiliate-content {
+  max-width: 800px;
+}
+
+.affiliate-content .section-desc {
+  margin-bottom: 16px;
+}
+
+/* Register screenshot */
+.register-screenshot {
+  margin: 32px 0;
+  text-align: center;
+}
+
+.register-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* Mobile responsive for new sections */
+@media (max-width: 768px) {
+  .bonus-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .aviator-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .deposit-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .bonus-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .login-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .rg-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mobile-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .guide-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .casino-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sports-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .payments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .register-img {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@media (max-width: 480px) {
+  .casino-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sports-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .payments-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .deposit-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .aviator-grid {
+    grid-template-columns: 1fr;
+  }
 }
