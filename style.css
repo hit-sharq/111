@@ -1183,3 +1183,378 @@ button, a {
     font-size: 14px;
   }
 }
+
+/* Registration Guide */
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.guide-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 28px;
+  transition: all 0.2s ease;
+}
+
+.guide-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(13, 124, 255, 0.4);
+  background: rgba(13, 124, 255, 0.08);
+}
+
+.guide-number {
+  width: 40px;
+  height: 40px;
+  background: #0d7cff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 900;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.guide-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.guide-desc {
+  font-size: 13px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Login Guide */
+.login-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 28px;
+}
+
+.login-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+}
+
+.login-steps, .login-tips {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.login-steps li, .login-tips li {
+  font-size: 13px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.login-steps li:last-child, .login-tips li:last-child {
+  border-bottom: none;
+}
+
+.login-steps li::before {
+  content: "→ ";
+  color: #0d7cff;
+  font-weight: 700;
+}
+
+.login-tips li::before {
+  content: "• ";
+  color: #0d7cff;
+  font-weight: 700;
+}
+
+.login-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Bonus Details */
+.bonus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.bonus-detail-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 24px;
+  transition: all 0.2s ease;
+}
+
+.bonus-detail-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(13, 124, 255, 0.4);
+  background: rgba(13, 124, 255, 0.08);
+}
+
+.bonus-detail-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.bonus-detail-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.bonus-detail-desc {
+  font-size: 13px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Mobile Experience */
+.mobile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.mobile-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.mobile-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(13, 124, 255, 0.4);
+  background: rgba(13, 124, 255, 0.08);
+}
+
+.mobile-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.mobile-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.mobile-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Responsible Gaming */
+.rg-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.rg-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.2s ease;
+}
+
+.rg-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(13, 124, 255, 0.4);
+  background: rgba(13, 124, 255, 0.08);
+}
+
+.rg-icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.rg-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.rg-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Betting Guide */
+.guide-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.guide-step {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 28px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.guide-step:hover {
+  transform: translateY(-4px);
+  border-color: rgba(13, 124, 255, 0.4);
+  background: rgba(13, 124, 255, 0.08);
+}
+
+.guide-step-number {
+  width: 48px;
+  height: 48px;
+  background: #0d7cff;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 900;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.guide-step-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.guide-step-desc {
+  font-size: 13px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Mobile responsive for new sections */
+@media (max-width: 768px) {
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .login-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bonus-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mobile-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .rg-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .guide-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .aviator-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .casino-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sports-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .payments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .register-title {
+    font-size: 40px;
+  }
+  
+  .bonus-title {
+    font-size: 32px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .casino-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sports-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .payments-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-title {
+    font-size: 36px;
+  }
+  
+  .register-title {
+    font-size: 32px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+  }
+  
+  .bonus-title {
+    font-size: 28px;
+  }
+  
+  .nav-logo-img {
+    height: 36px;
+  }
+}
