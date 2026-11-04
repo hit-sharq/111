@@ -11,7 +11,7 @@ html {
 
 body {
   margin: 0;
-  background: #070b12;
+  background: #0a0a0a;
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
@@ -913,7 +913,7 @@ button, a {
 
 /* Register section */
 .register-section {
-  background: #070b12;
+  background: #0a0a0a;
   text-align: center;
 }
 
@@ -949,7 +949,7 @@ button, a {
 
 /* Footer */
 .site-footer {
-  background: #070b12;
+  background: #0a0a0a;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 40px 20px 28px 20px;
 }
