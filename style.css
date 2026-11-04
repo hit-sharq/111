@@ -61,10 +61,19 @@ button, a {
   height: 48px;
 }
 
-.nav-logo img {
+.nav-logo-img {
   height: 48px;
   width: auto;
   display: block;
+}
+
+.nav-reg {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #a5a5a5;
+  margin-left: 12px;
 }
 
 .nav-links {
@@ -78,6 +87,7 @@ button, a {
 
 .nav-links a {
   color: #a5a5a5;
+  transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
@@ -147,21 +157,75 @@ button, a {
 
 .nav-menu-btn {
   display: none;
-  background: none;
-  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: #ffffff;
   font-size: 20px;
   cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  position: absolute;
+  top: 74px;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: #0b1018;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 20px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+}
+
+.mobile-menu.hidden {
+  display: none;
+}
+
+.mobile-menu-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.mobile-menu-inner a {
+  color: #ffffff;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-menu-inner a:last-child {
+  border-bottom: none;
+}
+
+.mobile-register {
+  margin-top: 8px;
+  text-align: center;
 }
 
 /* Hero Section */
 .hero {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 460px;
+  gap: 60px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 140px 20px 100px;
   align-items: center;
-  min-height: 80vh;
-  padding: 120px 20px;
-  background: #070b12;
+}
+
+.hero-bg-blur {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .hero-content {
@@ -216,14 +280,11 @@ button, a {
   margin: 40px 0;
 }
 
-.hero-actions .btn-primary {
+.hero-actions .btn {
   padding: 18px 32px;
   font-size: 16px;
-}
-
-.hero-actions .btn-outline {
-  padding: 18px 32px;
-  font-size: 16px;
+  width: 100%;
+  text-align: center;
 }
 
 .hero-trust {
@@ -244,6 +305,200 @@ button, a {
 
 .trust-icon {
   font-size: 16px;
+}
+
+.hero-card {
+  position: relative;
+}
+
+.hero-card-inner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #111923;
+  padding: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.live-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.live-label {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+
+.live-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 4px 0 0 0;
+}
+
+.live-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.live-badge i {
+  width: 6px;
+  height: 6px;
+  background: #f87171;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.match-card {
+  background: linear-gradient(135deg, #253752, #121923);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.match-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 20px;
+}
+
+.live-indicator {
+  color: #f87171;
+}
+
+.match-score {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.team {
+  text-align: center;
+}
+
+.team-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 0 auto 8px;
+}
+
+.team-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.score-display {
+  text-align: center;
+}
+
+.score {
+  font-size: 32px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0;
+}
+
+.time {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 4px 0 0 0;
+}
+
+.matches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.match-item {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.match-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 8px;
+}
+
+.match-teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.match-teams span:first-child {
+  flex: 1;
+}
+
+.odds {
+  display: flex;
+  gap: 6px;
+}
+
+.odd {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0d7cff;
+}
+
+.view-all-btn {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.75);
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background 0.2s ease;
+}
+
+.view-all-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* Sections */
@@ -289,7 +544,61 @@ button, a {
   max-width: 600px;
 }
 
-/* Sports Section */
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+/* About section */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 24px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.info-icon {
+  font-size: 24px;
+}
+
+.info-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.info-value {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 4px 0 0 0;
+}
+
+/* Sports section */
 .sports-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -353,7 +662,102 @@ button, a {
   text-decoration: underline;
 }
 
-/* Bonus Section */
+/* Casino section */
+.casino-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.casino-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 24px;
+  transition: all 0.2s ease;
+}
+
+.casino-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(13, 124, 255, 0.4);
+  background: rgba(13, 124, 255, 0.08);
+}
+
+.casino-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.casino-icon {
+  font-size: 36px;
+}
+
+.casino-number {
+  font-size: 12px;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.4);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.casino-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.casino-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+
+/* Aviator section */
+.aviator-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.aviator-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.aviator-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(13, 124, 255, 0.4);
+  background: rgba(13, 124, 255, 0.08);
+}
+
+.aviator-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.aviator-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.aviator-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Bonus section */
 .bonus-section {
   padding: 120px 20px;
 }
@@ -402,43 +806,115 @@ button, a {
   margin-bottom: 32px;
 }
 
-/* Why Section */
-.features-grid {
+/* Payments section */
+.payments-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin-top: 32px;
 }
 
-.feature-card {
+.payment-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 20px;
   padding: 24px;
+  transition: all 0.2s ease;
 }
 
-.feature-icon {
-  font-size: 24px;
-  margin-bottom: 16px;
+.payment-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(13, 124, 255, 0.4);
+  background: rgba(13, 124, 255, 0.08);
 }
 
-.feature-name {
+.payment-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.payment-icon {
+  font-size: 36px;
+}
+
+.payment-number {
+  font-size: 12px;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.4);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.payment-name {
   font-size: 18px;
   font-weight: 700;
   color: #ffffff;
-  margin: 0 0 8px 0;
+  margin: 0 0 4px 0;
 }
 
-.feature-desc {
-  font-size: 14px;
-  line-height: 1.75;
-  color: rgba(255, 255, 255, 0.45);
+.payment-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
   margin: 0;
 }
 
-/* Register Section */
+/* FAQ section */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.faq-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-btn:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.faq-arrow {
+  font-size: 18px;
+  color: #0d7cff;
+  transition: transform 0.2s ease;
+}
+
+.faq-answer {
+  padding: 0 24px 20px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  line-height: 1.75;
+  display: none;
+}
+
+.faq-answer.open {
+  display: block;
+}
+
+/* Register section */
 .register-section {
   background: #070b12;
+  text-align: center;
 }
 
 .register-card {
@@ -497,26 +973,10 @@ button, a {
   color: #ffffff;
 }
 
-.footer-logo-dot {
-  width: 24px;
-  height: 24px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #0d7cff;
-  color: #070b12;
-  font-size: 12px;
-  font-style: italic;
-  font-weight: 800;
-  border-radius: 6px;
-}
-
-.footer-brand span {
-  color: #ffffff;
-}
-
-.footer-brand span.footer-logo-dot {
-  color: #070b12;
+.footer-logo-img {
+  height: 30px;
+  width: auto;
+  display: block;
 }
 
 .footer-copyright {
@@ -545,51 +1005,104 @@ button, a {
   .nav-links {
     display: none;
   }
-  
+
   .nav-menu-btn {
-    display: block;
+    display: flex;
   }
-  
+
   .nav-actions .btn {
     display: none;
   }
-  
+
+  .nav-reg {
+    display: none;
+  }
+
   .hero {
-    padding: 80px 20px;
+    display: block;
+    padding: 100px 20px 60px;
     min-height: auto;
   }
-  
+
   .hero-title {
-    font-size: 48px;
+    font-size: 42px;
   }
-  
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
   .hero-actions {
     flex-direction: column;
   }
-  
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
   .hero-trust {
     justify-content: center;
+    gap: 16px;
   }
-  
+
   .sports-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
+  .casino-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .aviator-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
   .features-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .register-title {
     font-size: 40px;
   }
-  
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .bonus-title {
+    font-size: 32px;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
   .footer-container {
     gap: 24px;
   }
-  
+
   .footer-links {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 }
 
@@ -597,20 +1110,32 @@ button, a {
   .sports-grid {
     grid-template-columns: 1fr;
   }
-  
+
+  .casino-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payments-grid {
+    grid-template-columns: 1fr;
+  }
+
   .hero-title {
     font-size: 36px;
   }
-  
+
   .register-title {
     font-size: 32px;
   }
-  
+
   .section-title {
-    font-size: 32px;
+    font-size: 24px;
   }
-  
+
   .bonus-title {
-    font-size: 32px;
+    font-size: 28px;
+  }
+
+  .nav-logo-img {
+    height: 36px;
   }
 }

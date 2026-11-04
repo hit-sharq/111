@@ -5,31 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1win Kenya — Sports Betting, Casino & Live Games</title>
   <meta name="description" content="Play sports betting, casino and live games with 1win. Explore competitive odds, promotions and fast, secure gaming on mobile and desktop.">
-  <link rel="icon" href="/images/1win.jpeg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="/images/1win.jpeg">
+  <meta name="keywords" content="1win Kenya, 1win, sports betting, online casino, live betting, football betting">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="1win Kenya — Sports Betting, Casino & Live Games">
+  <meta property="og:description" content="Sports betting, casino and live games with 1win.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#121212">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="/images/favicon-v3.ico">
+  <link rel="apple-touch-icon" href="/images/favicon-v3.ico">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav class="site-nav">
     <div class="nav-container">
       <a href="#top" class="nav-logo" aria-label="1win home">
-        <img src="/images/Iwin.svg" width="104" height="48" alt="1win">
+        <img src="/images/1win-wordmark-generated.png" width="132" height="40" alt="1win" class="nav-logo-img" />
+        <span class="nav-reg">1WIN REG: 147039</span>
       </a>
       <div class="nav-links">
         <a href="#sports">Sports</a>
-        <a href="#live">Live betting</a>
-        <a href="#bonus">Promotions</a>
-        <a href="#why">Why 1win</a>
+        <a href="#casino">Casino</a>
+        <a href="#aviator">Aviator</a>
       </div>
       <div class="nav-actions">
-        <a href="#login" class="btn nav-btn">Log in</a>
-        <a href="#register" class="btn btn-green">Register</a>
+        <a href="#" class="nav-btn" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/login';">Log in</a>
+        <a href="#" class="btn-green" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/register';">Register</a>
       </div>
-      <button class="nav-menu-btn" aria-label="Toggle menu">☰</button>
+      <button class="nav-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu hidden">
+      <div class="mobile-menu-inner">
+        <a href="#" onclick="event.preventDefault(); closeMenu(); window.location.href='https://pakakumi.com/sports';">Sports</a>
+        <a href="#" onclick="event.preventDefault(); closeMenu(); window.location.href='https://pakakumi.com';">Casino</a>
+        <a href="#" onclick="event.preventDefault(); closeMenu(); window.location.href='https://pakakumi.com/aviator';">Aviator</a>
+        <a href="#" onclick="event.preventDefault(); closeMenu(); window.location.href='https://pakakumi.com/register';" class="btn-green mobile-register">Register</a>
+      </div>
     </div>
   </nav>
 
+  <!-- Hero -->
   <section id="top" class="hero">
+    <div class="hero-bg-blur"></div>
     <div class="hero-content">
       <div class="hero-badge">
         <span class="badge-icon">🔥</span>
@@ -38,8 +55,8 @@
       <h1 class="hero-title">Bet smarter.<br><span class="hero-highlight">Win bigger.</span></h1>
       <p class="hero-subtitle">Your new home for live sports, sharp odds and instant action. Join millions of fans making every match matter.</p>
       <div class="hero-actions">
-        <a href="#register" class="btn btn-primary">Create free account</a>
-        <a href="#sports" class="btn btn-outline">Explore sports</a>
+        <a href="#" class="btn btn-primary" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/register';">Create free account →</a>
+        <a href="#sports" class="btn btn-outline">Explore sports ↓</a>
       </div>
       <div class="hero-trust">
         <div class="trust-item"><span class="trust-icon">🛡️</span><span>Secure & trusted</span></div>
@@ -47,19 +64,145 @@
         <div class="trust-item"><span class="trust-icon">📱</span><span>Mobile ready</span></div>
       </div>
     </div>
+    <div class="hero-card">
+      <div class="hero-card-inner">
+        <div class="live-header">
+          <div>
+            <p class="live-label">Live now</p>
+            <p class="live-title">Top events today</p>
+          </div>
+          <span class="live-badge">● 24 live</span>
+        </div>
+        <div class="match-card">
+          <div class="match-header">
+            <span>Champions League</span>
+            <span class="live-indicator">Live 2nd half</span>
+          </div>
+          <div class="match-score">
+            <div class="team">
+              <div class="team-icon">⚪</div>
+              <p class="team-name">Real Madrid</p>
+            </div>
+            <div class="score-display">
+              <p class="score">2 : 1</p>
+              <p class="time">68:24</p>
+            </div>
+            <div class="team">
+              <div class="team-icon">🔵</div>
+              <p class="team-name">Man City</p>
+            </div>
+          </div>
+        </div>
+        <div class="matches-list">
+          <div class="match-item">
+            <div class="match-info">
+              <span>UEFA Champions League</span>
+              <span>20:00</span>
+            </div>
+            <div class="match-teams">
+              <span>Real Madrid vs Manchester City</span>
+              <div class="odds">
+                <span class="odd">1 1.82</span>
+                <span class="odd">X 3.95</span>
+                <span class="odd">2 3.60</span>
+              </div>
+            </div>
+          </div>
+          <div class="match-item">
+            <div class="match-info">
+              <span>Premier League</span>
+              <span>17:30</span>
+            </div>
+            <div class="match-teams">
+              <span>Arsenal vs Chelsea</span>
+              <div class="odds">
+                <span class="odd">1 1.64</span>
+                <span class="odd">X 4.20</span>
+                <span class="odd">2 5.10</span>
+              </div>
+            </div>
+          </div>
+          <div class="match-item">
+            <div class="match-info">
+              <span>Serie A</span>
+              <span>19:45</span>
+            </div>
+            <div class="match-teams">
+              <span>Inter Milan vs AC Milan</span>
+              <div class="odds">
+                <span class="odd">1 2.05</span>
+                <span class="odd">X 3.30</span>
+                <span class="odd">2 3.25</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="view-all-btn">View all live events →</button>
+      </div>
+    </div>
   </section>
 
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">About 1win</p>
+          <h2 class="section-title">Everything you need to know</h2>
+        </div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>1win is an international online betting and casino platform operated by 1win N.V., registered in Curaçao under company number 147039, license OGL/2024/587/0621.</p>
+          <p>We offer sports betting across football, tennis, basketball, cricket, esports and more — plus casino games, slots, live dealer tables, poker, and Aviator crash games.</p>
+          <p>Available on desktop and mobile, with fast deposits, secure withdrawals, and bonuses for new and existing players.</p>
+        </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-icon">📋</div>
+            <div class="info-content">
+              <span class="info-label">License</span>
+              <p class="info-value">OGL/2024/587/0621 (Curaçao)</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">🏢</div>
+            <div class="info-content">
+              <span class="info-label">Company</span>
+              <p class="info-value">1win N.V., Reg: 147039</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">🌍</div>
+            <div class="info-content">
+              <span class="info-label">Available</span>
+              <p class="info-value">Kenya and international</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">📱</div>
+            <div class="info-content">
+              <span class="info-label">Platform</span>
+              <p class="info-value">Web, iOS, Android</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sports -->
   <section id="sports" class="section sports-section">
     <div class="container">
       <div class="section-header">
         <div>
-          <p class="section-eyebrow">Pick your game</p>
+          <p class="section-eyebrow">Sportsbook</p>
           <h2 class="section-title">Every sport. One place.</h2>
         </div>
-        <a href="#register" class="view-all">View all sports <span>→</span></a>
+        <a href="#" class="view-all" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/sports';">View all sports →</a>
       </div>
       <div class="sports-grid">
-        <a href="#register" class="sport-card">
+        <a href="#" class="sport-card" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/sports';">
           <div class="sport-header">
             <span class="sport-icon">⚽</span>
             <span class="sport-number">01</span>
@@ -67,7 +210,7 @@
           <h3 class="sport-name">Football</h3>
           <p class="sport-count">1,248 markets</p>
         </a>
-        <a href="#register" class="sport-card">
+        <a href="#" class="sport-card" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/sports';">
           <div class="sport-header">
             <span class="sport-icon">🏀</span>
             <span class="sport-number">02</span>
@@ -75,7 +218,7 @@
           <h3 class="sport-name">Basketball</h3>
           <p class="sport-count">486 markets</p>
         </a>
-        <a href="#register" class="sport-card">
+        <a href="#" class="sport-card" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/sports';">
           <div class="sport-header">
             <span class="sport-icon">🎾</span>
             <span class="sport-number">03</span>
@@ -83,7 +226,7 @@
           <h3 class="sport-name">Tennis</h3>
           <p class="sport-count">392 markets</p>
         </a>
-        <a href="#register" class="sport-card">
+        <a href="#" class="sport-card" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/sports';">
           <div class="sport-header">
             <span class="sport-icon">◈</span>
             <span class="sport-number">04</span>
@@ -91,71 +234,293 @@
           <h3 class="sport-name">eSports</h3>
           <p class="sport-count">208 markets</p>
         </a>
+        <a href="#" class="sport-card" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/sports';">
+          <div class="sport-header">
+            <span class="sport-icon">🏏</span>
+            <span class="sport-number">05</span>
+          </div>
+          <h3 class="sport-name">Cricket</h3>
+          <p class="sport-count">256 markets</p>
+        </a>
+        <a href="#" class="sport-card" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/sports';">
+          <div class="sport-header">
+            <span class="sport-icon">🏒</span>
+            <span class="sport-number">06</span>
+          </div>
+          <h3 class="sport-name">Ice Hockey</h3>
+          <p class="sport-count">184 markets</p>
+        </a>
       </div>
     </div>
   </section>
 
+  <!-- Casino -->
+  <section id="casino" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">Casino</p>
+          <h2 class="section-title">Slots, Live Tables & Poker</h2>
+        </div>
+      </div>
+      <div class="casino-grid">
+        <a href="#" class="casino-card" onclick="event.preventDefault(); window.location.href='https://pakakumi.com';">
+          <div class="casino-header">
+            <span class="casino-icon">🎰</span>
+            <span class="casino-number">01</span>
+          </div>
+          <h3 class="casino-name">Slots</h3>
+          <p class="casino-desc">Hundreds of titles with progressive jackpots</p>
+        </a>
+        <a href="#" class="casino-card" onclick="event.preventDefault(); window.location.href='https://pakakumi.com';">
+          <div class="casino-header">
+            <span class="casino-icon">♠️</span>
+            <span class="casino-number">02</span>
+          </div>
+          <h3 class="casino-name">Blackjack</h3>
+          <p class="casino-desc">Beat the dealer in classic card games</p>
+        </a>
+        <a href="#" class="casino-card" onclick="event.preventDefault(); window.location.href='https://pakakumi.com';">
+          <div class="casino-header">
+            <span class="casino-icon">🎡</span>
+            <span class="casino-number">03</span>
+          </div>
+          <h3 class="casino-name">Roulette</h3>
+          <p class="casino-desc">European, American and French tables</p>
+        </a>
+        <a href="#" class="casino-card" onclick="event.preventDefault(); window.location.href='https://pakakumi.com';">
+          <div class="casino-header">
+            <span class="casino-icon">🃏</span>
+            <span class="casino-number">04</span>
+          </div>
+          <h3 class="casino-name">Baccarat</h3>
+          <p class="casino-desc">Player, banker or tie — high stakes</p>
+        </a>
+        <a href="#" class="casino-card" onclick="event.preventDefault(); window.location.href='https://pakakumi.com';">
+          <div class="casino-header">
+            <span class="casino-icon">♥️</span>
+            <span class="casino-number">05</span>
+          </div>
+          <h3 class="casino-name">Poker</h3>
+          <p class="casino-desc">Texas Hold'em and Omaha cash games</p>
+        </a>
+        <a href="#" class="casino-card" onclick="event.preventDefault(); window.location.href='https://pakakumi.com';">
+          <div class="casino-header">
+            <span class="casino-icon">📹</span>
+            <span class="casino-number">06</span>
+          </div>
+          <h3 class="casino-name">Live Casino</h3>
+          <p class="casino-desc">Real dealers streaming in real-time</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aviator -->
+  <section id="aviator" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">Crash Game</p>
+          <h2 class="section-title">Play 1win Aviator</h2>
+        </div>
+      </div>
+      <div class="aviator-grid">
+        <div class="aviator-card">
+          <div class="aviator-icon">✈️</div>
+          <h3 class="aviator-name">Cash out in time</h3>
+          <p class="aviator-desc">Watch the multiplier climb and cash out before the plane flies away.</p>
+        </div>
+        <div class="aviator-card">
+          <div class="aviator-icon">⚡</div>
+          <h3 class="aviator-name">Auto cash out</h3>
+          <p class="aviator-desc">Set your target multiplier and let the system cash out for you.</p>
+        </div>
+        <div class="aviator-card">
+          <div class="aviator-icon">🎯</div>
+          <h3 class="aviator-name">Multipliers to 100x+</h3>
+          <p class="aviator-desc">High multipliers for those who time their exit right.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bonuses -->
   <section id="bonus" class="section bonus-section">
     <div class="bonus-card">
       <div class="bonus-content">
         <p class="bonus-eyebrow">Welcome to the winning side</p>
         <h2 class="bonus-title">Get up to <span class="bonus-highlight">100% bonus</span> on your first deposit.</h2>
-        <p class="bonus-desc">More balance means more ways to play. Claim your welcome bonus and start your journey with 1win.</p>
-        <a href="#register" class="btn btn-white">Claim bonus</a>
+        <p class="bonus-desc">New players can claim a deposit match bonus on their first deposit. Bonus funds carry wagering requirements — always review the terms before claiming.</p>
+        <a href="#" class="btn btn-white" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/register';">Claim bonus</a>
       </div>
     </div>
   </section>
 
-  <section id="why" class="section why-section">
+  <!-- Payments -->
+  <section id="payments" class="section payments-section">
     <div class="container">
       <div class="section-header">
         <div>
-          <p class="section-eyebrow">Made for fans</p>
-          <h2 class="section-title">The game is better with 1win.</h2>
+          <p class="section-eyebrow">Deposits & Withdrawals</p>
+          <h2 class="section-title">Fast, secure payments</h2>
         </div>
-        <p class="section-desc">From pre-match picks to last-minute live action, everything you need is fast, fair and right at your fingertips.</p>
       </div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <span class="feature-icon">🏆</span>
-          <h3 class="feature-name">Competitive odds</h3>
-          <p class="feature-desc">Markets built to give you more value on every bet.</p>
+      <div class="payments-grid">
+        <a href="#" class="payment-card" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/register';">
+          <div class="payment-header">
+            <span class="payment-icon">💳</span>
+            <span class="payment-number">01</span>
+          </div>
+          <h3 class="payment-name">Bank Cards</h3>
+          <p class="payment-desc">Visa, Mastercard — instant deposits</p>
+        </a>
+        <a href="#" class="payment-card" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/register';">
+          <div class="payment-header">
+            <span class="payment-icon">📱</span>
+            <span class="payment-number">02</span>
+          </div>
+          <h3 class="payment-name">E-wallets</h3>
+          <p class="payment-desc">Fast, secure digital payments</p>
+        </a>
+        <a href="#" class="payment-card" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/register';">
+          <div class="payment-header">
+            <span class="payment-icon">₿</span>
+            <span class="payment-number">03</span>
+          </div>
+          <h3 class="payment-name">Crypto</h3>
+          <p class="payment-desc">Bitcoin, Ethereum and more</p>
+        </a>
+        <a href="#" class="payment-card" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/register';">
+          <div class="payment-header">
+            <span class="payment-icon">📞</span>
+            <span class="payment-number">04</span>
+          </div>
+          <h3 class="payment-name">Mobile Money</h3>
+          <p class="payment-desc">M-Pesa and local options where available</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">Good to know</p>
+          <h2 class="section-title">Frequently asked questions</h2>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">⚡</span>
-          <h3 class="feature-name">Fast withdrawals</h3>
-          <p class="feature-desc">Simple, secure payments with speedy payouts.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(0)">
+            <span>What is 1win?</span>
+            <span class="faq-arrow">↓</span>
+          </button>
+          <div class="faq-answer">1win is an online betting and casino platform offering sports betting, crash games (Aviator), slots, live casino, and poker. It operates under Curacao license OGL/2024/587/0621.</div>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon">🛡️</span>
-          <h3 class="feature-name">Play with confidence</h3>
-          <p class="feature-desc">Your safety and privacy always come first.</p>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(1)">
+            <span>Is 1win legit in Kenya?</span>
+            <span class="faq-arrow">↓</span>
+          </button>
+          <div class="faq-answer">Yes, 1win operates under Curacao Gaming Authority license OGL/2024/587/0621 and accepts players from Kenya.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(2)">
+            <span>Who owns 1win?</span>
+            <span class="faq-arrow">↓</span>
+          </button>
+          <div class="faq-answer">1win is owned by 1win N.V., a company registered in Curaçao under company number 147039.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(3)">
+            <span>How do I register on 1win?</span>
+            <span class="faq-arrow">↓</span>
+          </button>
+          <div class="faq-answer">Click Register, enter your phone number or email, create a password, verify your account via SMS, and start playing.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(4)">
+            <span>How do I log in to 1win?</span>
+            <span class="faq-arrow">↓</span>
+          </button>
+          <div class="faq-answer">Click Login, enter your phone number or email and password, then click Sign in.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(5)">
+            <span>How does the 1win welcome bonus work?</span>
+            <span class="faq-arrow">↓</span>
+          </button>
+          <div class="faq-answer">New players can claim a deposit match bonus on their first deposit. Bonus funds must be wagered before withdrawal.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(6)">
+            <span>What is 1win Aviator?</span>
+            <span class="faq-arrow">↓</span>
+          </button>
+          <div class="faq-answer">Aviator is a crash game where a plane takes off and the multiplier climbs. Cash out before the plane flies away to win.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(7)">
+            <span>How do I deposit on 1win?</span>
+            <span class="faq-arrow">↓</span>
+          </button>
+          <div class="faq-answer">Use cards, e-wallets, bank transfers, crypto, or mobile money where available. Go to the cashier and select your method.</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Register -->
   <section id="register" class="section register-section">
     <div class="register-card">
       <p class="register-eyebrow">Your next win starts now</p>
       <h2 class="register-title">Ready to make it count?</h2>
       <p class="register-desc">Join 1win today and experience betting without limits.</p>
-      <a href="#top" class="btn btn-primary">Register now</a>
+      <a href="#" class="btn btn-primary" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/register';">Register now →</a>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-container">
+    <div class="footer-container">
       <div class="footer-brand">
-        <span class="footer-logo-dot">1</span>win<span class="footer-logo-dot">.</span>
+        <img src="/images/1win-wordmark-generated.png" width="100" height="30" alt="1win" class="footer-logo-img" />
       </div>
       <p class="footer-copyright">© 2026 1win. Play responsibly. 18+</p>
       <div class="footer-links">
-        <a href="#top">Terms</a>
-        <a href="#top">Privacy</a>
-        <a href="#top">Responsible gaming</a>
+        <a href="#" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/terms-of-service';">Terms</a>
+        <a href="#" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/privacy-policy';">Privacy</a>
+        <a href="#" onclick="event.preventDefault(); window.location.href='https://pakakumi.com/responsible-gambling';">Responsible gaming</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.add('hidden');
+    }
+
+    function toggleFaq(index) {
+      const answers = document.querySelectorAll('.faq-answer');
+      const arrows = document.querySelectorAll('.faq-arrow');
+      answers.forEach((a, i) => {
+        if (i === index) {
+          a.classList.toggle('open');
+          arrows[i].textContent = a.classList.contains('open') ? '↑' : '↓';
+        } else {
+          a.classList.remove('open');
+          arrows[i].textContent = '↓';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
