@@ -1139,3 +1139,16 @@ button, a {
     height: 36px;
   }
 }
+
+/* Bonus screenshot */
+.bonus-screenshot {
+  margin: 24px 0;
+  text-align: center;
+}
+
+.bonus-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
