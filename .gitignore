@@ -32,3 +32,4 @@ pnpm-workspace.yaml
 # Build outputs
 dist/
 build/
+public/
